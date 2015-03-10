@@ -7,12 +7,12 @@ package com.gxws.tool.logging.constants;
  */
 public class LogContextStackConstant {
 
-	public final static String LEVEL_SPRINGMVC_INTERCEPTOR = "springmvc interceptor";
-
-	public final static String LEVEL_BO_AOP = "bo aop";
-
-	public final static String LEVEL_BO_AOP_TRANSACTION = "bo aop transaction";
-
-	public final static String LEVEL_MYBATIS_MAPPER = "mybatis mapper";
+//	public final static String LEVEL_SPRINGMVC_INTERCEPTOR = "springmvc interceptor";
+//
+//	public final static String LEVEL_BO_AOP = "bo aop";
+//
+//	public final static String LEVEL_BO_AOP_TRANSACTION = "bo aop transaction";
+//
+//	public final static String LEVEL_MYBATIS_MAPPER = "mybatis mapper";
 
 }

@@ -1,0 +1,2 @@
+dubboProviderLoggingInterceptor=com.gxws.tool.logging.spring.interceptor.DubboProviderLoggingInterceptor
+dubboConsumerLoggingInterceptor=com.gxws.tool.logging.spring.interceptor.DubboConsumerLoggingInterceptor
