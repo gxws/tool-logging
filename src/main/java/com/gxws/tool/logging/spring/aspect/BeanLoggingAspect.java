@@ -6,6 +6,7 @@ import org.apache.logging.log4j.ThreadContext;
 import org.aspectj.lang.JoinPoint;
 
 import com.alibaba.fastjson.JSON;
+import com.gxws.tool.logging.constants.LoggingMarkerConstant;
 
 /**
  * spring bean aop记录日志信息
@@ -23,16 +24,17 @@ public class BeanLoggingAspect {
 				+ jp.getSignature().getName();
 		ThreadContext.push(location);
 		try {
-			log.info(JSON.toJSON(jp.getArgs()));
+			log.info(LoggingMarkerConstant.BEAN_ASPECT_MARKER,
+					JSON.toJSON(jp.getArgs()));
 		} catch (Exception e) {
 			StringBuffer sb = new StringBuffer("{");
 			for (Object o : jp.getArgs()) {
-				if(null != o){
+				if (null != o) {
 					sb.append(o.toString() + ",");
 				}
 			}
 			sb.append("}");
-			log.info(sb.toString());
+			log.info(LoggingMarkerConstant.BEAN_ASPECT_MARKER, sb.toString());
 		}
 	}
 

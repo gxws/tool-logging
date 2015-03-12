@@ -9,10 +9,10 @@ import org.apache.logging.log4j.ThreadContext;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gxws.tool.common.constant.LocalConstant;
 import com.gxws.tool.common.constant.ProjectConstant;
 import com.gxws.tool.common.uuid.Uuid;
-import com.gxws.tool.logging.constants.LogContextMapConstant;
+import com.gxws.tool.logging.constants.LoggingContextMapConstant;
+import com.gxws.tool.logging.constants.LoggingMarkerConstant;
 import com.gxws.tool.logging.datamodel.HttpServletRequestDm;
 
 /**
@@ -29,20 +29,15 @@ public class WebLoggingInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse res,
 			Object handler) throws Exception {
-		ThreadContext.put(LogContextMapConstant.HTTP_REQUEST, Uuid.order());
-		ThreadContext.put(LogContextMapConstant.HTTP_SESSION, req.getSession()
-				.getId());
-		ThreadContext.put(LogContextMapConstant.PROJECT_NAME,
-				ProjectConstant.NAME);
-		ThreadContext.put(LogContextMapConstant.PROJECT_ENV,
-				ProjectConstant.ENV);
-		ThreadContext.put(LogContextMapConstant.PROJECT_VERSION,
-				ProjectConstant.VERSION);
-		ThreadContext.put(LogContextMapConstant.LOCAL_ADDR, LocalConstant.IP);
-//		ThreadContext.push(LogContextStackConstant.LEVEL_SPRINGMVC_INTERCEPTOR);
-		log.debug("接收http request请求");
+		ThreadContext.put(LoggingContextMapConstant.HTTP_REQUEST, Uuid.order());
+		ThreadContext.put(LoggingContextMapConstant.HTTP_SESSION, req
+				.getSession().getId());
+//		for (String k : ProjectConstant.getAll().keySet()) {
+//			ThreadContext.put(k, ProjectConstant.get(k));
+//		}
+		log.debug(LoggingMarkerConstant.HTTP_REQUEST_MARKER, "接收http request请求");
 		HttpServletRequestDm dm = new HttpServletRequestDm(req);
-		log.info(dm.info());
+		log.info(LoggingMarkerConstant.HTTP_REQUEST_MARKER, dm.info());
 		return true;
 	}
 
@@ -56,7 +51,8 @@ public class WebLoggingInterceptor implements HandlerInterceptor {
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		log.debug("处理http request请求完成");
+		log.debug(LoggingMarkerConstant.HTTP_REQUEST_MARKER,
+				"处理http request请求完成");
 	}
 
 }

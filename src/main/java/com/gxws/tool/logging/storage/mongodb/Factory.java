@@ -23,9 +23,10 @@ public class Factory {
 
 	private final static int port = 14000;
 
-	private final static String username = ProjectConstant.NAME;
+	private final static String username = ProjectConstant.VALUE_PROJECT_NAME;
 
-	private final static char[] password = ProjectConstant.NAME.toCharArray();
+	private final static char[] password = ProjectConstant.VALUE_PROJECT_NAME
+			.toCharArray();
 
 	private final static String database = "logging";
 
