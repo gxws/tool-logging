@@ -35,7 +35,7 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 	 * 
 	 */
 	public MongoDbConnection(String servers, String databaseName,
-			String collectionName, String username, String password) {
+			String username, String password) {
 		List<ServerAddress> salist = saList(servers);
 		List<MongoCredential> mclist = mcList(username, databaseName, password);
 		if ("".equals(username) && "".equals(password)) {

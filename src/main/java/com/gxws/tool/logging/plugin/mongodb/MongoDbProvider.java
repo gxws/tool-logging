@@ -27,9 +27,8 @@ public class MongoDbProvider implements NoSqlProvider<MongoDbConnection> {
 	private MongoDbConnection conn;
 
 	private MongoDbProvider(String servers, String databaseName,
-			String collectionName, String username, String password) {
-		conn = new MongoDbConnection(servers, databaseName, collectionName,
-				username, password);
+			String username, String password) {
+		conn = new MongoDbConnection(servers, databaseName, username, password);
 	}
 
 	@Override
@@ -46,8 +45,7 @@ public class MongoDbProvider implements NoSqlProvider<MongoDbConnection> {
 			@PluginAttribute("password") final String password) {
 		return new MongoDbProvider(ifblank(servers, "servers", defaultServers),
 				ifblank(databaseName, "databaseName", defaultName), ifblank(
-						collectionName, "collectionName", defaultName),
-				ifblank(username, "username", ""), ifblank(password,
+						username, "username", ""), ifblank(password,
 						"password", ""));
 	}
 
