@@ -6,7 +6,7 @@ import org.apache.logging.log4j.ThreadContext;
 import org.aspectj.lang.JoinPoint;
 
 import com.alibaba.fastjson.JSON;
-import com.gxws.tool.logging.constants.LoggingMarkerConstant;
+import com.gxws.tool.logging.constant.LoggingMarkerConstant;
 
 /**
  * spring bean aop记录日志信息

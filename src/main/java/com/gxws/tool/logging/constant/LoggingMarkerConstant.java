@@ -1,4 +1,4 @@
-package com.gxws.tool.logging.constants;
+package com.gxws.tool.logging.constant;
 
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;

@@ -1,4 +1,4 @@
-package com.gxws.tool.logging.constants;
+package com.gxws.tool.logging.constant;
 
 /**
  * 日志属性

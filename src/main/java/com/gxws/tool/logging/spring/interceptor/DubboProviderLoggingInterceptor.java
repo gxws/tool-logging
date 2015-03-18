@@ -11,10 +11,9 @@ import com.alibaba.dubbo.rpc.Invocation;
 import com.alibaba.dubbo.rpc.Invoker;
 import com.alibaba.dubbo.rpc.Result;
 import com.alibaba.dubbo.rpc.RpcException;
-import com.gxws.tool.common.constant.ProjectConstant;
 import com.gxws.tool.common.data.dto.BaseDto;
 import com.gxws.tool.common.uuid.Uuid;
-import com.gxws.tool.logging.constants.LoggingContextMapConstant;
+import com.gxws.tool.logging.constant.LoggingContextMapConstant;
 
 /**
  * 服务提供方通过dubbo远程调用记录日志信息

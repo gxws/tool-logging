@@ -20,10 +20,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-nosql</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-1.2-api</artifactId>
 		</dependency>
 
@@ -32,6 +28,10 @@
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+        </dependency>
 
 		<!-- spring -->
 		<dependency>
@@ -54,5 +54,7 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
 		</dependency>
+		
+		
 	</dependencies>
 </project>

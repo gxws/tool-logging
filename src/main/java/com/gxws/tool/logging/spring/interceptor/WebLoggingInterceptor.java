@@ -9,10 +9,9 @@ import org.apache.logging.log4j.ThreadContext;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gxws.tool.common.constant.ProjectConstant;
 import com.gxws.tool.common.uuid.Uuid;
-import com.gxws.tool.logging.constants.LoggingContextMapConstant;
-import com.gxws.tool.logging.constants.LoggingMarkerConstant;
+import com.gxws.tool.logging.constant.LoggingContextMapConstant;
+import com.gxws.tool.logging.constant.LoggingMarkerConstant;
 import com.gxws.tool.logging.datamodel.HttpServletRequestDm;
 
 /**
