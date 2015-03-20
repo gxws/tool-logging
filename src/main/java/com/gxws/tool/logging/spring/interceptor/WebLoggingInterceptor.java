@@ -31,9 +31,6 @@ public class WebLoggingInterceptor implements HandlerInterceptor {
 		ThreadContext.put(LoggingContextMapConstant.HTTP_REQUEST, Uuid.order());
 		ThreadContext.put(LoggingContextMapConstant.HTTP_SESSION, req
 				.getSession().getId());
-//		for (String k : ProjectConstant.getAll().keySet()) {
-//			ThreadContext.put(k, ProjectConstant.get(k));
-//		}
 		log.debug(LoggingMarkerConstant.HTTP_REQUEST_MARKER, "接收http request请求");
 		HttpServletRequestDm dm = new HttpServletRequestDm(req);
 		log.info(LoggingMarkerConstant.HTTP_REQUEST_MARKER, dm.info());
