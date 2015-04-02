@@ -19,8 +19,8 @@ import com.gxws.tool.logging.plugin.nosql.NoSqlProvider;
 public class MongoDbProvider implements NoSqlProvider<MongoDbConnection> {
 
 	private static final Logger log = StatusLogger.getLogger();
-
-	private static String defaultServers = "mongodb.gxwsxx.com:14000";
+	
+	private static String defaultServers = "0.mongodb.gxwsxx.com:14000,1.mongodb.gxwsxx.com:14000,2.mongodb.gxwsxx.com:14000";
 
 	private static String defaultName = "logging";
 
@@ -28,6 +28,8 @@ public class MongoDbProvider implements NoSqlProvider<MongoDbConnection> {
 
 	private MongoDbProvider(String servers, String databaseName,
 			String username, String password) {
+		log.info("创建日志存储链接：" + servers + " " + databaseName + " " + username
+				+ " " + password);
 		conn = new MongoDbConnection(servers, databaseName, username, password);
 	}
 
@@ -43,6 +45,7 @@ public class MongoDbProvider implements NoSqlProvider<MongoDbConnection> {
 			@PluginAttribute("servers") final String servers,
 			@PluginAttribute("username") final String username,
 			@PluginAttribute("password") final String password) {
+
 		return new MongoDbProvider(ifblank(servers, "servers", defaultServers),
 				ifblank(databaseName, "databaseName", defaultName), ifblank(
 						username, "username", ""), ifblank(password,
