@@ -22,34 +22,34 @@ public class HttpServletRequestDm {
 
 	@JSONField(ordinal = 0)
 	private String url;
-	
+
 	@JSONField(ordinal = 2)
 	private String referer;
-	
+
 	@JSONField(ordinal = 3)
 	private String userAgent;
-	
+
 	@JSONField(ordinal = 4)
 	private String remoteAddr;
-	
+
 	@JSONField(ordinal = 5)
 	private String remoteHost;
-	
+
 	@JSONField(ordinal = 6)
 	private String remotePort;
-	
+
 	@JSONField(ordinal = 3)
 	private String localPort;
-	
+
 	@JSONField(ordinal = 7)
 	private String localName;
-	
+
 	@JSONField(ordinal = 7)
 	private String localAddr;
-	
+
 	@JSONField(ordinal = 1)
 	private Map<String, String[]> parameters;
-	
+
 	@JSONField(ordinal = 100)
 	private Map<String, Set<String>> cookies;
 
@@ -75,7 +75,11 @@ public class HttpServletRequestDm {
 		cookies = new HashMap<>();
 		String key;
 		Set<String> valueSet;
-		for (Cookie c : req.getCookies()) {
+		Cookie[] cs = req.getCookies();
+		if (null == cs) {
+			return;
+		}
+		for (Cookie c : cs) {
 			key = c.getName();
 			valueSet = cookies.get(key);
 			if (null == valueSet) {
