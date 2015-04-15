@@ -4,10 +4,15 @@
 	<parent>
 		<groupId>com.gxws</groupId>
 		<artifactId>top-config-project</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>tool-logging</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<version.tool.common>1.0.0</version.tool.common>
+	</properties>
+
 	<dependencies>
 		<!-- log4j2 -->
 		<dependency>
@@ -28,10 +33,10 @@
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+		</dependency>
 
 		<!-- spring -->
 		<dependency>
@@ -55,6 +60,12 @@
 			<artifactId>dubbo</artifactId>
 		</dependency>
 		
-		
+		<!-- gxws -->
+		<dependency>
+			<groupId>com.gxws</groupId>
+			<artifactId>tool-common</artifactId>
+			<version>${version.tool.common}</version>
+		</dependency>
+
 	</dependencies>
 </project>
