@@ -3,8 +3,8 @@ package com.gxws.tool.logging.plugin.nosql.entity;
 import java.io.Serializable;
 
 /**
- * @author 朱伟亮
- * @create 2015年3月16日上午11:28:15
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月16日上午11:28:15
  *
  */
 public class ThrownEntity implements Serializable {

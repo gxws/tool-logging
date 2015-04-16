@@ -11,8 +11,8 @@ import com.gxws.tool.logging.plugin.nosql.NoSqlProvider;
 /**
  * 将日志信息写入mongodb
  * 
- * @author 朱伟亮
- * @create 2015年3月13日上午10:35:28
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月13日上午10:35:28
  *
  */
 @Plugin(name = "MongoDbProvider", category = "Core", printObject = true)

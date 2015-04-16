@@ -18,8 +18,8 @@ import com.gxws.tool.logging.constant.LoggingContextMapConstant;
 /**
  * 服务提供方通过dubbo远程调用记录日志信息
  * 
- * @author 朱伟亮
- * @create 2015年3月6日下午2:24:40
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月6日下午2:24:40
  *
  */
 public class DubboProviderLoggingInterceptor implements Filter {

@@ -17,8 +17,8 @@ import com.gxws.tool.common.data.dto.BaseDto;
 /**
  * 服务调用方通过dubbo远程调用记录日志信息
  * 
- * @author 朱伟亮
- * @create 2015年3月6日下午2:31:56
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月6日下午2:31:56
  *
  */
 public class DubboConsumerLoggingInterceptor implements Filter {

@@ -11,8 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * 日志信息
  * 
- * @author 朱伟亮
- * @create 2015年3月16日上午11:07:38
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月16日上午11:07:38
  *
  */
 @Document(collection = "logging123")

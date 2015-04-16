@@ -5,8 +5,8 @@ import com.gxws.tool.common.constant.ProjectConstant;
 /**
  * 收集项目相关信息
  * 
- * @author 朱伟亮
- * @create 2015年3月18日下午5:57:48
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月18日下午5:57:48
  *
  */
 public class ProjectEntity {

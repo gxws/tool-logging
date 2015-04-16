@@ -14,8 +14,8 @@ import com.alibaba.fastjson.annotation.JSONField;
 /**
  * 收集http servlet request请求的信息
  * 
- * @author 朱伟亮
- * @create 2015年2月27日下午4:06:15
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年2月27日下午4:06:15
  *
  */
 public class HttpServletRequestDm {

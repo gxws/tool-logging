@@ -17,8 +17,8 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 /**
- * @author 朱伟亮
- * @create 2015年3月13日下午2:27:12
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月13日下午2:27:12
  *
  */
 public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
@@ -30,8 +30,8 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 	private Mongo mongo;
 
 	/**
-	 * @author 朱伟亮
-	 * @create 2015年3月17日下午3:36:52
+	 * @author zhuwl120820@gxwsxx.com
+	 *  2015年3月17日下午3:36:52
 	 * 
 	 */
 	public MongoDbConnection(String servers, String databaseName,

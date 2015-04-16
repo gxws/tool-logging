@@ -4,8 +4,8 @@ import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
 
 /**
- * @author 朱伟亮
- * @create 2015年3月11日下午5:42:17
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月11日下午5:42:17
  *
  */
 public class LoggingMarkerConstant {

@@ -5,8 +5,8 @@ import java.io.Serializable;
 /**
  * 日志来源信息
  * 
- * @author 朱伟亮
- * @create 2015年3月16日上午11:15:23
+ * @author zhuwl120820@gxwsxx.com
+ *  2015年3月16日上午11:15:23
  *
  */
 public class SourceEntity implements Serializable {
