@@ -7,7 +7,7 @@
 		<version>1.0.1</version>
 	</parent>
 	<artifactId>tool-logging</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<properties>
 		<version.tool.common>1.0.0</version.tool.common>
