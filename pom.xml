@@ -7,7 +7,7 @@
 		<version>1.0.2</version>
 	</parent>
 	<artifactId>tool-logging</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.3-SNAPSHOT</version>
 
 	<dependencies>
 		<!-- log4j2 -->
@@ -54,6 +54,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>

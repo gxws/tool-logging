@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="error" packages="com.gxws.tool.logging.plugin">
+	<Properties>
+		<Property name="pEnv">${web:attr.project.env}</Property>
+		<Property name="pName">${web:attr.project.name}</Property>
+		<Property name="pVersion">${web:attr.project.version}
+		</Property>
+		<Property name="pIp">${web:attr.project.ip}</Property>
+		<Property name="pPort">${web:attr.project.port}</Property>
+		<!-- 日志格式 -->
+		<!-- [时间]#[项目信息]#[等级]#[类全名.方法名.行数]#[线程名]#ThreadContextStack#[ThreadContextMap]#信息 -->
+		<Property name="formate">
+			[%d{DEFAULT}]#[${pEnv}][${pName}][${pVersion}][${pIp}][${pPort}]#[%p{length=5}]#[%c][%M][%L]#[%t]#%x#[%X]#%m%n
+		</Property>
+	</Properties>
+	<Appenders>
+		<Console name="consoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern="${formate}" />
+		</Console>
+		<RollingFile name="rollingFileAppender" fileName="../logs/${pName}.log"
+			filePattern="../logs/$${date:yyyy-MM}/${pName}-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout pattern="${formate}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="250 MB" />
+			</Policies>
+		</RollingFile>
+		<NoSqlAppender name="nosqlAppender">
+			<MongoDbProvider />
+		</NoSqlAppender>
+	</Appenders>
+
+	<Loggers>
+		<Root level="error">
+			<AppenderRef ref="consoleAppender" />
+			<AppenderRef ref="rollingFileAppender" />
+			<AppenderRef ref="nosqlAppender" />
+		</Root>
+		<Logger name="com.gxws" level="debug" additivity="false">
+			<AppenderRef ref="consoleAppender" />
+			<AppenderRef ref="rollingFileAppender" />
+			<AppenderRef ref="nosqlAppender" />
+		</Logger>
+	</Loggers>
+</configuration>
