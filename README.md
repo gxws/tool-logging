@@ -1,6 +1,8 @@
 tool-logging
 ============
 
+mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
+
 日志工具，用于收集系统处理过程中产生的操作记录。
 
 版本变更说明
@@ -9,7 +11,7 @@ tool-logging
 ## 1.0
 ### 1.0.3
 完善了说明文档README.md。<br>
-将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。
+将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。<br>
 
 
 
@@ -70,11 +72,11 @@ spring bean的public方法接收的参数和返回结果<br>
 	</NoSqlAppender>
 	
 ### 2、组件依赖
-spring framework web模块，版本为4.1以上。<br>
-apache log4j，版本为2.2以上。<br>
-slf4j版本1.7以上。<br>
-mongo-java-driver版本2.13以上。
-fastjson版本1.2以上。<br>
+org.springframework spring-web 4.1<br>
+org.apache.logging.log4j log4j-core 2.2<br>
+org.slf4j slf4j-api 1.7<br>
+org.mongodb mongo-java-driver 2.13<br>
+com.alibaba fastjson 1.2<br>
 其他依赖参考pom.xml。
 
 使用方式
@@ -86,7 +88,7 @@ fastjson版本1.2以上。<br>
 	<dependency>
 		<groupId>com.gxws</groupId>
 		<artifactId>tool-logging</artifactId>
-		<version>${version.gxws.tool.logging}</version>
+		<version>最新版本号</version>
 	</dependency>
 
 ### 2、引入spring配置
