@@ -12,10 +12,6 @@ tool-logging
 将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。
 
 
-# 2
-## 2.0
-### 2.0.0
-
 
 功能点
 ---
