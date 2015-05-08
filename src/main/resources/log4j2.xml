@@ -26,7 +26,7 @@
 			</Policies>
 		</RollingFile>
 		<NoSqlAppender name="nosqlAppender">
-			<MongoDbProvider />
+			<MongoDbProvider env="${pEnv}" />
 		</NoSqlAppender>
 	</Appenders>
 

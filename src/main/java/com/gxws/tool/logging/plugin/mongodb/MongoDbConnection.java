@@ -17,6 +17,8 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 /**
+ * mongodb 连接
+ * 
  * @author zhuwl120820@gxwsxx.com 2015年3月13日下午2:27:12
  *
  */
@@ -51,6 +53,10 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 		mt = new MongoTemplate(mongo, databaseName);
 	}
 
+	public MongoDbConnection() {
+
+	}
+
 	private List<ServerAddress> saList(String servers) {
 		List<ServerAddress> salist = new ArrayList<>();
 		for (String server : servers.split(",")) {
@@ -75,13 +81,19 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 
 	@Override
 	public void insert(LoggingEntity o) {
-		mt.insert(o);
+		if(null != mt){
+			mt.insert(o);
+		}
 	}
 
 	@Override
 	public void close() {
-		mongo.close();
-		mt = null;
+		if(null!= mongo){
+			mongo.close();
+		}
+		if(null != mt){
+			mt = null;
+		}
 	}
 
 	@Override

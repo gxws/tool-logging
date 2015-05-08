@@ -12,7 +12,7 @@ mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
 ### 1.0.3
 完善了说明文档README.md。<br>
 将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。<br>
-
+修改非线上环境不启用远程日志存储功能，即env属性不属于[{ "dev", "test", "real" }]的不启用nosql存储功能。<br>
 
 
 功能点

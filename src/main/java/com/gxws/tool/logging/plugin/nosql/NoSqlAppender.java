@@ -9,17 +9,22 @@ import org.apache.logging.log4j.core.config.plugins.PluginElement;
 import org.apache.logging.log4j.core.config.plugins.PluginFactory;
 import org.apache.logging.log4j.core.util.Booleans;
 
+/**
+ * nosql appender
+ * 
+ * @author zhuwl120820@gxwsxx.com
+ *
+ */
 @Plugin(name = "NoSqlAppender", category = "Core", elementType = "appender", printObject = true)
 public final class NoSqlAppender extends
 		AbstractDatabaseAppender<NoSqlManager<?>> {
-	
+
 	private static final long serialVersionUID = -5332950611163930578L;
-	
+
 	private final String description;
 
 	private NoSqlAppender(final String name, final Filter filter,
-			final boolean ignoreExceptions,
-			final NoSqlManager<?> manager) {
+			final boolean ignoreExceptions, final NoSqlManager<?> manager) {
 		super(name, filter, ignoreExceptions, manager);
 		this.description = this.getName() + "{ manager=" + this.getManager()
 				+ " }";
@@ -50,8 +55,8 @@ public final class NoSqlAppender extends
 				+ ", bufferSize=" + bufferSizeInt + ", provider=" + provider
 				+ " }";
 
-		final NoSqlManager<?> manager = NoSqlManager
-				.getNoSqlManager(managerName, bufferSizeInt, provider);
+		final NoSqlManager<?> manager = NoSqlManager.getNoSqlManager(
+				managerName, bufferSizeInt, provider);
 		if (manager == null) {
 			return null;
 		}

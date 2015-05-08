@@ -8,6 +8,13 @@ import org.apache.logging.log4j.core.util.Closer;
 
 import com.gxws.tool.logging.plugin.nosql.entity.LoggingEntity;
 
+/**
+ * nosql 连接管理
+ * 
+ * @author zhuwl120820@gxwsxx.com
+ *
+ * @param <W>
+ */
 public class NoSqlManager<W extends LoggingEntity> extends
 		AbstractDatabaseManager {
 

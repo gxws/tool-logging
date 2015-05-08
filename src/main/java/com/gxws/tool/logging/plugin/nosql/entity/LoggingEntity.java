@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *  2015年3月16日上午11:07:38
  *
  */
-@Document(collection = "logging123")
+@Document(collection = "logging")
 public class LoggingEntity implements Serializable {
 
 	@Id
