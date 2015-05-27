@@ -30,6 +30,8 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 
 	private Mongo mongo;
 
+	private boolean isOffline;
+
 	/**
 	 * 
 	 * @param servers
@@ -51,10 +53,11 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 			mongo = new MongoClient(salist, mclist);
 		}
 		mt = new MongoTemplate(mongo, databaseName);
+		isOffline = false;
 	}
 
 	public MongoDbConnection() {
-
+		isOffline = true;
 	}
 
 	private List<ServerAddress> saList(String servers) {
@@ -81,24 +84,24 @@ public class MongoDbConnection implements NoSqlConnection<LoggingEntity> {
 
 	@Override
 	public void insert(LoggingEntity o) {
-		if(null != mt){
+		if (null != mt) {
 			mt.insert(o);
 		}
 	}
 
 	@Override
 	public void close() {
-		if(null!= mongo){
+		if (null != mongo && !isOffline) {
 			mongo.close();
 		}
-		if(null != mt){
+		if (null != mt && !isOffline) {
 			mt = null;
 		}
 	}
 
 	@Override
 	public boolean isClosed() {
-		if (null == mt) {
+		if (null == mt && !isOffline) {
 			return true;
 		} else {
 			return false;
