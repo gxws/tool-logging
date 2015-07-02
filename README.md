@@ -7,17 +7,20 @@ mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
 
 版本变更说明
 ---
-# 1
-## 1.0
 ### 1.0.3
 完善了说明文档README.md。<br>
 将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。<br>
 修改非线上环境不启用远程日志存储功能，即env属性不属于[{ "dev", "test", "real" }]的不启用nosql存储功能。<br>
 
+### 1.1.0
+去除了nosql依赖，将nosql部分的功能划分到可选功能。<br>
+重新调整配置了项目maven依赖，不再继承自parent。<br>
+配置文件spring-logging.xml文件名修改为spring-logging-default.xml。<br>
+修改默认配置方式，从配置文件的方式修改为编程方式。<br>
 
 功能点
 ---
-### 1、收集，收集信息包括：
+### 1.收集，收集信息包括：
 http访问请求请求信息、参数名和值<br>
 
 	com.gxws.tool.logging.spring.interceptor.WebLoggingInterceptor
@@ -29,7 +32,7 @@ spring bean的public方法接收的参数和返回结果<br>
 
 	com.gxws.tool.logging.spring.aspect.BeanLoggingAspect
 
-### 2、发送，将收集数据发送到nosql数据库存储及存储格式：
+### 2.发送，将收集数据发送到nosql数据库存储及存储格式：
 数据发送到nosql数据库：
 
 	com.gxws.tool.logging.plugin.nosql
@@ -40,9 +43,48 @@ spring bean的public方法接收的参数和返回结果<br>
 依赖关系
 ---
 
-### 1、服务依赖
-#### mongodb
+### 1.组件依赖
+org.springframework spring-web 4.1<br>
+org.apache.logging.log4j log4j-core 2.2<br>
+org.slf4j slf4j-api 1.7<br>
+com.alibaba fastjson 1.2<br>
+其他依赖参考pom.xml。
+
+使用方式
+---
+
+### 引入maven配置
+在pom.xml文件中加入
+
+	<dependency>
+		<groupId>com.gxws</groupId>
+		<artifactId>tool-logging</artifactId>
+		<version>最新版本号</version>
+	</dependency>
+
+### 引入spring配置
+在spring.xml文件中加入
+
+	<import resource="spring-logging-default.xml" />
+	
+使用组件
+---
+### MongoDB
+将日志信息发送到MongoDB。<br>
 默认连接mongodb replica set 集群。<br>
+
+#### 引入maven包
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>2.13.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-mongodb</artifactId>
+		<version>1.6.2.RELEASE</version>
+	</dependency>
+
 默认连接地址为:
 
 	0.mongodb.gxwsxx.com:14000
@@ -71,30 +113,4 @@ spring bean的public方法接收的参数和返回结果<br>
 		username="" password="" />
 	</NoSqlAppender>
 	
-### 2、组件依赖
-org.springframework spring-web 4.1<br>
-org.apache.logging.log4j log4j-core 2.2<br>
-org.slf4j slf4j-api 1.7<br>
-org.mongodb mongo-java-driver 2.13<br>
-com.alibaba fastjson 1.2<br>
-其他依赖参考pom.xml。
-
-使用方式
----
-
-### 1、引入maven配置
-在pom.xml文件中加入
-
-	<dependency>
-		<groupId>com.gxws</groupId>
-		<artifactId>tool-logging</artifactId>
-		<version>最新版本号</version>
-	</dependency>
-
-### 2、引入spring配置
-在spring.xml文件中加入
-
-	<import resource="spring-logging.xml" />
-	
-
 	

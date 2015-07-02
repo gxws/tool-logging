@@ -10,7 +10,7 @@
 		<!-- 日志格式 -->
 		<!-- [时间]#[项目信息]#[等级]#[类全名.方法名.行数]#[线程名]#ThreadContextStack#[ThreadContextMap]#信息 -->
 		<Property name="formate">
-			[%d{DEFAULT}]#[${pEnv}][${pName}][${pVersion}][${pIp}][${pPort}]#[%p{length=5}]#[%c][%M][%L]#[%t]#%x#[%X]#%m%n
+			%d{DEFAULT} # ${pEnv} # ${pName} # ${pVersion} # ${pIp} # ${pPort} # %p{length=5} # %c # %M # %L # %t # %x # %X #%m%n
 		</Property>
 	</Properties>
 	<Appenders>
@@ -25,21 +25,21 @@
 				<SizeBasedTriggeringPolicy size="250 MB" />
 			</Policies>
 		</RollingFile>
-		<NoSqlAppender name="nosqlAppender">
+		<!-- <NoSqlAppender name="nosqlAppender">
 			<MongoDbProvider env="${pEnv}" />
-		</NoSqlAppender>
+		</NoSqlAppender> -->
 	</Appenders>
 
 	<Loggers>
 		<Root level="error">
 			<AppenderRef ref="consoleAppender" />
 			<AppenderRef ref="rollingFileAppender" />
-			<AppenderRef ref="nosqlAppender" />
+			<!-- <AppenderRef ref="nosqlAppender" /> -->
 		</Root>
 		<Logger name="com.gxws" level="debug" additivity="false">
 			<AppenderRef ref="consoleAppender" />
 			<AppenderRef ref="rollingFileAppender" />
-			<AppenderRef ref="nosqlAppender" />
+			<!-- <AppenderRef ref="nosqlAppender" /> -->
 		</Logger>
 	</Loggers>
 </configuration>
