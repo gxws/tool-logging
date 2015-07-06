@@ -17,6 +17,7 @@ mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
 重新调整配置了项目maven依赖，不再继承自parent。<br>
 配置文件spring-logging.xml文件名修改为spring-logging-default.xml。<br>
 修改默认配置方式，从配置文件的方式修改为编程方式。<br>
+将dubbo filter配置加入spring-logging.xml中。<br>
 
 功能点
 ---
