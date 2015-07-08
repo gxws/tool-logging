@@ -18,6 +18,8 @@ mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
 配置文件spring-logging.xml文件名修改为spring-logging-default.xml。<br>
 修改默认配置方式，从配置文件的方式修改为编程方式。<br>
 将dubbo filter配置加入spring-logging.xml中。<br>
+添加了排除logging输出，实现org.springframework.web.servlet.HandlerInterceptor接口的类。<br>
+添加了排除logging输出，参数只包含org.aspectj.lang.JoinPoint类的对象。<br>
 
 功能点
 ---

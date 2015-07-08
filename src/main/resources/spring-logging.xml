@@ -12,7 +12,10 @@
 	<aop:config>
 		<aop:aspect id="logging" ref="loggingAspect">
 			<aop:pointcut id="loggingPointcut"
-				expression="execution(* com.gxws..*.*(..)) and !execution(* com.gxws.tool.logging..*.*(..))" />
+				expression="execution(public * com.gxws..*.*(..)) 
+				and not execution(* com.gxws.tool.logging..*.*(..))
+				and not execution(* com.gxws.tool..*.*(org.aspectj.lang.JoinPoint))
+				and not target(org.springframework.web.servlet.HandlerInterceptor)" />
 			<aop:before method="before" pointcut-ref="loggingPointcut" />
 			<aop:after method="after" pointcut-ref="loggingPointcut" />
 		</aop:aspect>
@@ -29,6 +32,5 @@
 	</mvc:interceptors>
 
 	<dubbo:provider filter="dubboProviderLoggingInterceptor" />
-
 	<dubbo:consumer filter="dubboConsumerLoggingInterceptor" />
 </beans>
