@@ -11,8 +11,8 @@ import org.apache.logging.log4j.MarkerManager;
 public class LoggingMarkerConstant {
 
 	public static final Marker HTTP_REQUEST_MARKER = MarkerManager
-			.getMarker("springmvc web http logging interceptor");
+			.getMarker("HTTP_REQUEST");
 
 	public static final Marker BEAN_ASPECT_MARKER = MarkerManager
-			.getMarker("spring bean logging aspect");
+			.getMarker("BEAN_ASPECT");
 }

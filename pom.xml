@@ -18,13 +18,18 @@
 
 		<version.servlet>3.1.0</version.servlet>
 
-		<version.tool.common>1.1.0-RELEASE</version.tool.common>
+		<version.tool.common>1.2.0-SNAPSHOT</version.tool.common>
 
 		<version.mongo.java.driver>2.13.0</version.mongo.java.driver>
 		<version.spring.data.mongodb>1.6.2.RELEASE</version.spring.data.mongodb>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.gxws</groupId>
+			<artifactId>tool-common</artifactId>
+			<version>${version.tool.common}</version>
+		</dependency>
 		<!-- log4j2 -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -76,12 +81,6 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${version.servlet}</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.gxws</groupId>
-			<artifactId>tool-common</artifactId>
-			<version>${version.tool.common}</version>
 		</dependency>
 
 		<!-- mongodb -->

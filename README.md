@@ -20,6 +20,7 @@ mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
 将dubbo filter配置加入spring-logging.xml中。<br>
 添加了排除logging输出，实现org.springframework.web.servlet.HandlerInterceptor接口的类。<br>
 添加了排除logging输出，参数只包含org.aspectj.lang.JoinPoint类的对象。<br>
+修改了marker的内容。<br>
 
 功能点
 ---
