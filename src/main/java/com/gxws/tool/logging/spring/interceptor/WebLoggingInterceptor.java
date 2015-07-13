@@ -18,8 +18,7 @@ import com.gxws.tool.logging.datamodel.HttpServletRequestDm;
  * spring mvc controller接收http请求前interceptor记录日志
  * 
  * @author zhuwl120820@gxwsxx.com
- *  2015年2月27日下午2:22:56
- *
+ * @since 1.0
  */
 public class WebLoggingInterceptor implements HandlerInterceptor {
 

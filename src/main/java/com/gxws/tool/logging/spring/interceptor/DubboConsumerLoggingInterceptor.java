@@ -13,13 +13,13 @@ import com.alibaba.dubbo.rpc.Invoker;
 import com.alibaba.dubbo.rpc.Result;
 import com.alibaba.dubbo.rpc.RpcException;
 import com.gxws.tool.common.data.dto.BaseDto;
+import com.gxws.tool.logging.constant.LoggingMarkerConstant;
 
 /**
  * 服务调用方通过dubbo远程调用记录日志信息
  * 
  * @author zhuwl120820@gxwsxx.com
- *  2015年3月6日下午2:31:56
- *
+ * @since 1.0
  */
 public class DubboConsumerLoggingInterceptor implements Filter {
 
@@ -36,7 +36,7 @@ public class DubboConsumerLoggingInterceptor implements Filter {
 				((BaseDto) o).setRequestMap(map);
 			}
 		}
-		log.debug("发送dubbo rpc请求");
+		log.debug(LoggingMarkerConstant.DUBBO_FILTER_MARKER, "发送dubbo rpc请求");
 		return invoker.invoke(invocation);
 	}
 

@@ -12,8 +12,7 @@ import com.gxws.tool.logging.constant.LoggingMarkerConstant;
  * spring bean aop记录日志信息
  * 
  * @author zhuwl120820@gxwsxx.com
- *  2015年3月6日上午9:35:00
- *
+ * @since 1.0
  */
 public class BeanLoggingAspect {
 
