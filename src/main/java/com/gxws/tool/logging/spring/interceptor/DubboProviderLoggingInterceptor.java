@@ -27,17 +27,15 @@ public class DubboProviderLoggingInterceptor implements Filter {
 	private Logger log = LogManager.getLogger();
 
 	@Override
-	public Result invoke(Invoker<?> invoker, Invocation invocation)
-			throws RpcException {
+	public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
 		Object[] os = invocation.getArguments();
 		Map<String, String> reqMap = null;
-		ThreadContext.put(LoggingContextMapConstant.SERVICE_REQUEST,
-				Uuid.order());
+		ThreadContext.put(LoggingContextMapConstant.SERVICE_REQUEST, Uuid.order());
 		for (Object o : os) {
 			if (o instanceof BaseDto) {
 				reqMap = ((BaseDto) o).getRequestMap();
 				((BaseDto) o).setResponseMap(ThreadContext.getContext());
-				if (null != reqMap && 0 != reqMap.size()) {
+				if (null != reqMap && reqMap.isEmpty()) {
 					break;
 				}
 			}

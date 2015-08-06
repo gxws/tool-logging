@@ -8,19 +8,25 @@ mail list:朱伟亮 \<zhuwl120820@gxwsxx.com>
 版本变更说明
 ---
 ### 1.0.3
-完善了说明文档README.md。<br>
-将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。<br>
+修改将配置文件log4j2.xml和spring-logging.xml从项目目录转移至tool-logging的包目录。<br>
 修改非线上环境不启用远程日志存储功能，即env属性不属于[{ "dev", "test", "real" }]的不启用nosql存储功能。<br>
+<br>
+添加完善了说明文档README.md。<br>
 
 ### 1.1.0
-去除了nosql依赖，将nosql部分的功能划分到可选功能。<br>
-重新调整配置了项目maven依赖，不再继承自parent。<br>
-配置文件spring-logging.xml文件名修改为spring-logging-default.xml。<br>
+去除nosql依赖，将nosql部分的功能划分到可选功能。<br>
+<br>
+修改重新调整配置了项目maven依赖，不再继承自parent。<br>
+修改配置文件spring-logging.xml文件名修改为spring-logging-default.xml。<br>
 修改默认配置方式，从配置文件的方式修改为编程方式。<br>
-将dubbo filter配置加入spring-logging.xml中。<br>
-添加了排除logging输出，实现org.springframework.web.servlet.HandlerInterceptor接口的类。<br>
-添加了排除logging输出，参数只包含org.aspectj.lang.JoinPoint类的对象。<br>
-修改了marker的内容。<br>
+<br>
+添加将dubbo filter配置加入spring-logging.xml中。<br>
+添加排除logging输出，实现org.springframework.web.servlet.HandlerInterceptor接口的类。<br>
+添加排除logging输出，参数只包含org.aspectj.lang.JoinPoint类的对象。<br>
+修改marker的内容。<br>
+
+### 1.2.0
+添加WebLoggingInterceptor拦截器拦截到异常后的log。<br>
 
 功能点
 ---
